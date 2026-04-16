@@ -1,15 +1,21 @@
-# Урок 9: Анализ open-source компонентов и зависимостей
+# Урок 10: Взаимодействие с разработкой и код-ревью
 
 ## Что добавлено в этом уроке
 
 | Файл | Описание |
 |------|---------|
-| `vulnerable-app/requirements.txt` | Файл зависимостей Python с известными CVE |
+| `.sonarlint/settings.json` | Конфигурация SonarLint для IDE |
+| `.gitlab/merge_request_templates/Default.md` | Шаблон merge request для GitLab |
 
 ## Структура проекта
 
 ```
 github_project/
+├── .gitlab/
+│   └── merge_request_templates/
+│       └── Default.md
+├── .sonarlint/
+│   └── settings.json
 ├── docker-compose.yml
 ├── Jenkinsfile
 ├── fp-analysis.md
@@ -74,6 +80,7 @@ github_project/
 | 7 | Security Hotspots и митигация уязвимостей | hotspot-review.md |
 | 8 | Анализ разных языков и фреймворков | frontend/app.js, frontend/sonar-project.properties |
 | 9 | Анализ open-source компонентов и зависимостей | vulnerable-app/requirements.txt |
+| 10 | Взаимодействие с разработкой и код-ревью | .sonarlint/settings.json, .gitlab/merge_request_templates/Default.md |
 
 ## Требования
 
@@ -81,8 +88,12 @@ github_project/
 - **Оперативная память**: минимум 4GB, рекомендуется 8GB
 - **Свободное место на диске**: минимум 5GB
 - **Порт 9000** должен быть свободен для SonarQube
+- **SonarLint плагин** для вашей IDE (VS Code, IntelliJ, etc.)
 
 ## Описание компонентов
 
-### vulnerable-app/requirements.txt
-Файл зависимостей Python проекта, содержащий версии пакетов с известными CVE (Common Vulnerabilities and Exposures) для демонстрации возможностей SonarQube в анализе уязвимостей в open-source компонентах.
+### .sonarlint/settings.json
+Конфигурация SonarLint для интеграции с IDE, позволяющая разработчикам получать feedback прямо в редакторе кода при разработке.
+
+### .gitlab/merge_request_templates/Default.md
+Шаблон merge request для GitLab, включающий пункты для проверки результатов SonarQube сканирования и Security Hotspots перед интеграцией кода.
