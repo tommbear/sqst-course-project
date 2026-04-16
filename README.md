@@ -1,10 +1,11 @@
-# Урок 7: Security Hotspots и митигация уязвимостей
+# Урок 8: Анализ разных языков и фреймворков
 
 ## Что добавлено в этом уроке
 
 | Файл | Описание |
 |------|---------|
-| `hotspot-review.md` | Документ с рекомендациями по анализу Security Hotspots |
+| `frontend/app.js` | Frontend приложение на JavaScript |
+| `frontend/sonar-project.properties` | Конфигурация SonarQube для frontend части |
 
 ## Структура проекта
 
@@ -19,6 +20,9 @@ github_project/
 ├── setup-quality-gate.sh
 ├── scan.sh
 ├── sonar-project.properties
+├── frontend/
+│   ├── app.js
+│   └── sonar-project.properties
 └── vulnerable-app/
     ├── app.py
     └── utils.py
@@ -68,6 +72,7 @@ github_project/
 | 5 | Кастомизация Quality Gate, правил и работа с замечаниями | quality-gate.json, setup-quality-gate.sh |
 | 6 | False Positive / False Negative: системный подход | fp-analysis.md |
 | 7 | Security Hotspots и митигация уязвимостей | hotspot-review.md |
+| 8 | Анализ разных языков и фреймворков | frontend/app.js, frontend/sonar-project.properties |
 
 ## Требования
 
@@ -78,5 +83,8 @@ github_project/
 
 ## Описание компонентов
 
-### hotspot-review.md
-Руководство по анализу Security Hotspots в SonarQube - участков кода, где разработчик должен вручную определить, является ли код уязвимым. Включает стратегии рецензирования, методы митигации и примеры исправления уязвимостей.
+### frontend/app.js
+Frontend приложение на JavaScript, демонстрирующее уязвимости, специфичные для этого языка (например, injection, XSS).
+
+### frontend/sonar-project.properties
+Конфигурация SonarQube специально для JavaScript/frontend части проекта с соответствующими правилами и исключениями.
