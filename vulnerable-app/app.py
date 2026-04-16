@@ -128,6 +128,17 @@ def read_file():
     with open(filepath) as f:
         return f.read()
 
+# =============================================================================
+# УЯЗВИМОСТЬ 6: Open Redirect (CWE-601) | OWASP A01:2025
+# =============================================================================
+
+@app.route("/redirect")
+def unsafe_redirect():
+    """Перенаправляет на URL из параметра 'next' без проверки."""
+    next_url = request.args.get("next", "/")
+    # УЯЗВИМОСТЬ: редирект на любой URL, включая внешние сайты
+    return f'<script>window.location="{next_url}";</script>'
+
 
 # =============================================================================
 # УЯЗВИМОСТЬ 5: Weak Cryptography (CWE-326 / CWE-327)
@@ -156,6 +167,7 @@ def hash_password_secure(password: str) -> str:
     salt = secrets.token_hex(16)
     # Используем SHA-256 с солью (в реальном коде — bcrypt/argon2)
     return hashlib.sha256((salt + password).encode()).hexdigest() + ":" + salt
+
 
 
 if __name__ == "__main__":
