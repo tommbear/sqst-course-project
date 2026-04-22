@@ -1,0 +1,6 @@
+projectKey=vulnerable-app
+serverUrl=http://localhost:9000
+serverVersion=26.4.0.121862
+dashboardUrl=http://localhost:9000/dashboard?id=vulnerable-app
+ceTaskId=965d8a6e-0a32-4352-a57a-a7b5fd758084
+ceTaskUrl=http://localhost:9000/api/ce/task?id=965d8a6e-0a32-4352-a57a-a7b5fd758084
